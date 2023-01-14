@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:padding="10dp"
+    app:cardBackgroundColor="#ffff"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/dimen5"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen5"
+        android:layout_gravity="center"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen5"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:padding="@dimen/dimen5"
+                android:layout_gravity="center"
+                android:id="@+id/companyTV"
+                android:layout_width="0dp"
+                android:layout_weight=".9"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="Company:"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:layout_gravity="end"
+                android:id="@+id/ImUserBloked"
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:layout_height="30dp"
+                android:src="@drawable/block_user"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/companyTV"
+            android:layout_marginTop="@dimen/dimen5"
+            android:paddingStart="10dp"
+            android:text="Authority:"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/MobileTV"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:paddingStart="10dp"
+                android:text="Mob1:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/number2TV"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:text="Mob1:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/employeesTV"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:paddingStart="10dp"
+                android:text="Employee:"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/monthlychargeTV"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:text="Monthly Charge:"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

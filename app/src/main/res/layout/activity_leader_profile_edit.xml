@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/toolbar_color">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_left_black_48dp"
+            android:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/back"
+            android:layout_centerVertical="true"
+            android:text="Profile Edit"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/one"
+        android:background="#E6E5E5">
+
+    </View>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/img12card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp32"
+                android:paddingBottom="@dimen/dimen8"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen12"
+                android:layout_marginEnd="@dimen/dp32"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/user_profile_image"
+                    android:layout_width="@dimen/dimen100"
+                    android:layout_height="@dimen/dimen100"
+                    android:src="@drawable/user"
+                    android:padding="5dp"
+                    android:layout_marginStart="@dimen/dimen15"
+                    android:layout_marginTop="@dimen/dimen8"
+                    app:civ_border_color="#00000000"
+                    app:civ_border_width="0dp" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:src="@drawable/upload"
+                    android:layout_marginTop="@dimen/dimen25"
+                    android:id="@+id/img1card"
+                    android:layout_marginEnd="@dimen/dimen20"
+                    android:layout_height="@dimen/dimen30">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img12card"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Leader Name"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/company_name"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/CompanyNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Name"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no1TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/company_name_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Mobile No"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mob_no_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/no1TV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETno1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Number"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mob_no_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Mobile No 2"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mob_no_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/no2TV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETno2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Number"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mob_no_layout2"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Email"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/emailTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Email"
+                    android:inputType="text"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Address"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/addressTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Address"
+                    android:inputType="text"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nidTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Nid"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/nidTV"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETnid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="00"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="number"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/father_nameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nid_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Father Name"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/father_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/father_nameTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETfather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Father Name"
+                    android:inputType="text"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mother_nameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/father_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Mother Name"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/motherName_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/mother_nameTV"
+                android:background="@drawable/shadow_border"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETmother_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Mother Name"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/motherName_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Gender"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gender_layout"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@+id/gender"
+                android:layout_marginStart="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dimen10">
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/toolbar_color"
+                        android:checked="false"
+                        android:text="Male"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:buttonTint="@color/toolbar_color"
+                        android:checked="false"
+                        android:text="Female"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gender_layout"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/gradiant_button"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

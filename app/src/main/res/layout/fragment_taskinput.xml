@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/servicetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen15"
+        android:layout_marginStart="@dimen/dp32"
+        android:text="Employee List"
+        android:textColor="@color/black"
+        android:textSize="@dimen/category_text">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/country_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        app:cardBackgroundColor="@color/white"
+        app:errorEnabled="true">
+
+        <Spinner
+            android:id="@+id/sp_employeeList"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:textColor="@android:color/black" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="Note"
+        android:textColor="@color/black_color"
+        android:textSize="18sp">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/company_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/company_name"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/noteET"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen150"
+            android:layout_marginStart="8dp"
+            android:padding="@dimen/dimen8"
+            android:gravity="start"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:hint="Enter Note"
+            android:inputType="text"
+            android:textColor="@color/black_color"
+            android:textColorHint="@color/hint" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitBT"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen40"
+        android:layout_below="@+id/company_name_layout"
+        android:layout_margin="@dimen/dimen30"
+        android:background="@drawable/gradiant_button"
+        android:text="Submit"
+        android:textColor="@color/white">
+
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+</LinearLayout>

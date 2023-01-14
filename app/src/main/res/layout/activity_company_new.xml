@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".activity.company.CompanyActivity">
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo_trans" />
+
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/logoff" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/one">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lyt_userData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="@dimen/dimen8"
+                    android:src="@drawable/user" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/userMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/live_track_employeeId"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_alignTop="@+id/tvCompany"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/liveyellow">
+
+                </pl.droidsonroids.gif.GifImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"                    android:background="@drawable/gradiant_white"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Company"
+                    android:textColor="#FAA83A"/>
+                <TextView
+                    android:backgroundTint="#D50101"
+                    android:layout_marginStart="@dimen/dimen10"
+                    android:id="@+id/tvDue"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"                    android:background="@drawable/gradiant_white"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Due : 300"
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvCompany"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvCreateUser"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_marginEnd="5dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/box"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Create Employee &amp; Leader "
+                            android:textAlignment="center"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvUserList"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+
+                    android:layout_toEndOf="@+id/cvCreateUser"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/list"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Employee List"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_dateWise"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvCreateUser"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/attendance"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Personal Attendance"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_leaderList"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvUserList"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/cv_dateWise"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img4"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/group"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Leader List"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_leaderAtten"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_dateWise"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img5"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/verifiedaccount"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Leader Attendance"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_setLoc"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_leaderList"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/cv_leaderAtten"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img6"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/loc"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv6"
+                            android:layout_width="@dimen/dimen100"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="Set Company Location"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_company_details"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_leaderAtten"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img10"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/information"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Company Details"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_company_edit"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_setLoc"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/cv_leaderAtten"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img11"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/edit"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Delete Employee"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_Changepass"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_company_details"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img16"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/password"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Change Password"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_blockuser"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_toEndOf="@+id/cv_Changepass"
+                    android:layout_below="@+id/cv_company_details"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img19"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/block_user"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Blocked List"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_attendance_report"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_Changepass"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img32"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/resume"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Attendance Report"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_set_geo"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_Changepass"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/cv_attendance_report"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img34"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/attendance"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Work Location"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_due_report"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_attendance_report"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img33"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/due"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv302"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Due List"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginStart="@dimen/dimen5"
+                    android:id="@+id/cv_sale_report"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_set_geo"
+                    android:layout_toEndOf="@+id/cv_due_report"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/dimen5"
+                    app:cardCornerRadius="10dp"
+                   >
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img90"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            app:cardCornerRadius="75dp"
+                            app:cardElevation="12dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/verified"
+                                android:padding="18dp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Sales Report"
+                            android:textSize="16sp">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

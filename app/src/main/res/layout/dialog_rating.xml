@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <TextView
+        android:background="@color/toolbar_color"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:padding="@dimen/dimen5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Rating"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_marginTop="@dimen/dimen30"
+        android:layout_marginBottom="@dimen/dimen30"
+        android:layout_gravity="center"
+        android:theme="@style/RatingBar"
+        android:rating="0"
+        android:stepSize="1"
+        android:numStars="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dimen10"
+        android:layout_marginEnd="@dimen/dimen5"
+        android:layout_marginStart="@dimen/dimen5"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_button"
+            android:text="Cancel"
+            android:layout_marginRight="@dimen/dimen5"
+
+            android:textColor="@color/white"
+            android:textSize="14sp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_button"
+            android:text="Submit"
+            android:layout_marginLeft="@dimen/dimen5"
+            android:textColor="@color/white"
+            android:textSize="14sp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

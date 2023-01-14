@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserListActivity">
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/toolbar_color"
+        android:orientation="horizontal">
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight=".1"
+            android:src="@drawable/ic_arrow_left_black_48dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/hederName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_weight=".9"
+            android:text="Geo Report"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E6E5E5"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="8dp"
+        android:id="@+id/rv_geoList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:nestedScrollingEnabled="true"
+        android:scrollbars="horizontal">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

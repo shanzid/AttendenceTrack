@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#4A89FE">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Geo Finder"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="100dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/createGeo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ic_rac"
+                >
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_user"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Geo"/>
+
+
+                <ImageView
+                    android:padding="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/tv_user"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_piece"/>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/goAttendance"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="100dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_attandance"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#4A89FE">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

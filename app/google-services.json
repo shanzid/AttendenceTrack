@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "921499470057",
+    "firebase_url": "https://attendance-tracker-97046-default-rtdb.firebaseio.com",
+    "project_id": "attendance-tracker-97046",
+    "storage_bucket": "attendance-tracker-97046.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921499470057:android:ce7dead8fa6ee22a324878",
+        "android_client_info": {
+          "package_name": "com.attendance.tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921499470057-bt014bmcjmf4p1ve6fp9c5pkvcmcgia5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd-mdYq3jtREsgYy8G7XTICgVm6Rh3XUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921499470057-bt014bmcjmf4p1ve6fp9c5pkvcmcgia5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

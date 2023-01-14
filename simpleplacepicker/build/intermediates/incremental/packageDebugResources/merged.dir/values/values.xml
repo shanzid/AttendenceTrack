@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_color">#E8F0FF</color>
+    <color name="black_color">#000</color>
+    <color name="colorAccent">#5BCBF6</color>
+    <color name="colorPrimary">#4A89FE</color>
+    <color name="colorPrimaryDark">#022532</color>
+    <color name="white_color">#ffff</color>
+    <string name="address_found">address found</string>
+    <string name="app_name">SimplePlacePicker</string>
+    <string name="company_name">Company Name</string>
+    <string name="confirm_dest">Confirm destination</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="confirm_pickup">Confirm pickup</string>
+    <string name="create_company">Create company</string>
+    <string name="failed_select_location">failed to select location please try again</string>
+    <string name="no_address_found">No address found</string>
+    <string name="not_support_area">This area is not supported yet</string>
+    <string name="search_place">Search a place</string>
+    <string name="service_not_available">Service not available ..check network connection</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

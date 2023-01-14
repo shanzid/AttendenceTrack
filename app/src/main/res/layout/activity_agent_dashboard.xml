@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+
+    tools:context=".agent.AgentDashboardActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo_trans" />
+
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/logoff" />
+    </RelativeLayout>
+
+        <ScrollView
+            android:layout_below="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/lyt_userData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="100dp"
+                        android:id="@+id/profile_image"
+                        android:padding="@dimen/dimen8"
+                        android:layout_height="100dp"
+                        android:src="@drawable/user" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/userName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/userMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:id="@+id/profile"
+                        android:layout_height="40dp"
+                        android:src="@drawable/resume" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyt_userData"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/gradiant_white"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:id="@+id/tv"
+                    android:text="Agent"
+                    android:textColor="#FAA83A">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+
+                <RelativeLayout
+                    android:layout_marginBottom="@dimen/dimen20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvCreateUser"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_marginEnd="5dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img1"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/enterprise"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Create Company"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvUserList"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/cvCreateUser"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img2"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/list"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Company List"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvUserEdit"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cvUserList"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img3"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/list"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Company Edit"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_chnagepass"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cvUserList"
+                        android:layout_marginStart="@dimen/dimen10"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@+id/cvUserEdit"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img8"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/password"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Change Password"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_sales_report"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cvUserEdit"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="@dimen/dimen5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/verified"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Sales Report"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_commission_list"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cvUserEdit"
+                        android:layout_marginStart="@dimen/dimen10"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@+id/cv_sales_report"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img88"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/discount"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv89"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Commission List"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_deu_list"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cv_sales_report"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="@dimen/dimen5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/due"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Due List"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginBottom="@dimen/dp40"
+                        android:id="@+id/cv_block_company"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cv_commission_list"
+                        android:layout_marginStart="@dimen/dimen10"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@+id/cvUserEdit"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/block_user"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Block Company"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/dimen20"
+                        android:id="@+id/cv_account_summary"
+                        android:layout_width="165dp"
+                        android:layout_height="160dp"
+                        android:layout_below="@+id/cv_deu_list"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="@dimen/dimen5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:innerRadius="0dp"
+                                android:shape="ring"
+                                app:cardCornerRadius="75dp"
+                                app:cardElevation="12dp">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/expenses"
+                                    android:padding="18dp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Account Summary"
+                                android:textSize="16sp">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+</RelativeLayout>

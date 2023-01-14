@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.master.CreateCompanyActivity"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/toolbar_color">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_left_black_48dp"
+            android:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/create_company"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/one"
+        android:background="#E6E5E5">
+
+    </View>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/company_name"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/company_name"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/CompanyNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Company Name"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no1TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/company_name_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Mobile No"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mob_no_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/no1TV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETno1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Number"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mob_no_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Mobile No 2"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mob_no_2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/no2TV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETmob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Second Number"
+                    android:inputType="text"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mob_no_2"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Name"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/userNameTV"
+                android:layout_marginStart="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETUser_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter name"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="text"
+                    android:paddingTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_name_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Email"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/emailTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Email"
+                    android:inputType="text"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countryTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Country"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/country_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/countryTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="8dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:paddingEnd="8dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+
+                <Spinner
+                    android:id="@+id/sp_country"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/black" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/divTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/country_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Division"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/div_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/divTV"
+                android:layout_marginStart="30dp"
+                android:paddingStart="8dp"
+                android:layout_marginTop="5dp"
+                android:paddingEnd="8dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+
+                android:paddingBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <Spinner
+                    android:id="@+id/sp_division"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:textColor="@android:color/black" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/districtTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="District"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/district_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/districtTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <Spinner
+                    android:id="@+id/sp_district"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/black" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/thanaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/district_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Thana"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/thana_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/thanaTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <Spinner
+                    android:id="@+id/sp_thana"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/black" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thana_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Address"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/addressTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Address"
+                    android:inputType="text"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/costTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Cost"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cost_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/costTV"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="0"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="number"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/employeeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cost_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Employee Limit"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/employee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/employeeTV"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shadow_border"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETemployee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Employee Limit"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/passoneTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employee_layout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Password"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/passoneTV"
+                android:layout_marginStart="@dimen/dimen30"
+                android:background="@drawable/gradiant_white"
+                android:id="@+id/passlayout"
+                android:layout_marginEnd="@dimen/dimen30"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ETpass"
+                    android:layout_width="0dp"
+                    android:layout_weight=".9"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/ic_baseline_lock_24"
+                    android:drawablePadding="20dp"
+                    android:drawableTint="@color/black"
+                    android:fontFamily="@font/popin_regular"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint" />
+
+                <ImageView
+                    android:id="@+id/showPassword"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dimen5"
+                    android:layout_width="0dp"
+                    android:layout_weight=".1"
+                    android:layout_height="@dimen/dimen40"
+                    android:src="@drawable/eye"
+                    app:tint="@color/black"/>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/confirm_passTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/passlayout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Confirm Password"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/confirm_passTV"
+                    android:layout_marginStart="@dimen/dimen30"
+                    android:id="@+id/cpasslayout"
+                    android:background="@drawable/gradiant_white"
+                    android:layout_marginEnd="@dimen/dimen30"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ETconfirmpass"
+                        android:layout_width="0dp"
+                        android:layout_weight=".9"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_baseline_lock_24"
+                        android:drawablePadding="20dp"
+                        android:drawableTint="@color/black"
+                        android:fontFamily="@font/popin_regular"
+                        android:hint=" Confirm Password"
+                        android:inputType="textPassword"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint" />
+
+                    <ImageView
+                        android:id="@+id/showPassword2"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/dimen5"
+                        android:layout_width="0dp"
+                        android:layout_weight=".1"
+                        android:layout_height="@dimen/dimen40"
+                        android:src="@drawable/eye"
+                        app:tint="@color/black"/>
+                </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cpasslayout"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/gradiant_button"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

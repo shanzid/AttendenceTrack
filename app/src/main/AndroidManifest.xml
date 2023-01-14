@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.attendance.tracker">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission android:name="com.attendance.tracker.activity.MapsActivity.broadcast_permission" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+
+        <activity
+            android:name=".UserBlockActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ServerMaintainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.master.SalesReportDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.company.PaymentSubmitActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.company.CompanyActivity"
+            android:screenOrientation="portrait"/> <!-- <activity -->
+        <!-- android:name=".CompanyDueListActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".activity.company.CompanyDueListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_company_due"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.NewCompanyList.CompanyDetailsActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".agent.CommisionListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.master.CompanyEdit.CompanyInfoEditActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".agent.SalesReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".agent.DueListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".agent.AccountSummaryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".agent.AgentDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.company.SearchActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AttendanceReport.AttendanceHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.company.CompanyActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.company.BlockUserListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AgentList.AgentListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.NewCompanyList.NewCompanyListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.leader.LeaderProfileEditActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.leader.LeaderProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.Task.TaskDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.Task.TaskEmployeeActivity"
+            android:parentActivityName=".activity.user.UserMainActivity" />
+        <activity android:name=".activity.login.VerifyPhoneActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.login.NewPasswordSetActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.Task.TaskActivity"
+            android:parentActivityName=".activity.user.UserMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ManualWork.ManualWorkActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ProfileDetails.EmployeeDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EmployeeEditActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ForgotpassActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ChangePassActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ProfileDetails.MasterProfileDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDd-mdYq3jtREsgYy8G7XTICgVm6Rh3XUA" />
+
+        <activity
+            android:name=".ReportViewMapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SupportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name=".activity.user.MapTestUserActivity$LocationService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location" />
+
+        <activity android:name=".activity.ProfileDetails.ProfileDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.master.CompanyEdit.UserEditActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.user.MapTestUserActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.master.CompanyEdit.CompanyProfileEditActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Live_trackerMapsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.user.UserGeoListActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.DateWiseGeoActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.user.UserMainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.leader.LeaderUserListActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.UserListActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.company.CreateLeaderActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.company.CompanyActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.com"
+                    android:scheme="https" />
+
+                <data
+                    android:host="example.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.map.ActivityMaps"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.master.MasterActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.master.CreateCompanyActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ShowGeoReportActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AllUserTracking"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MapsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GeoReportMapActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".utils.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <!--
+        <receiver android:name=".activity.user.MapTestUserActivity$MyBroadcastReceiver"  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
+        -->
+        <receiver
+            android:name=".activity.user.MapTestUserActivity$MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="com.artisoft.geofinder.LocationService.MY_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.attendance.tracker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

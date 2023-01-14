@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4A89FE</color>
+    <color name="colorPrimaryDark">#022532</color>
+    <color name="colorAccent">#5BCBF6</color>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="white_color">#ffff</color>
+    <color name="black_color">#000</color>
+    <color name="toolbar_color">#FCB537</color>
+    <color name="text_color">#FAA83A</color>
+    <color name="hint">#8B8888</color>
+    <color name="grey">#808080</color>
+    <color name="cardbg">#E4E1E1</color>
+    <color name="black">#FF000000</color>
+    <color name="mate_white">#F6F5F5</color>
+</resources>

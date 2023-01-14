@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportViewMapActivity"
+    >
+
+    <fragment
+        android:id="@+id/map2"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ReportViewMapActivity"
+        />
+    <ImageView
+        android:id="@+id/back"
+        android:padding="@dimen/dimen5"
+        android:layout_margin="@dimen/dimen10"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
+        android:src="@drawable/ic_arrow_left_black_48dp"
+         />
+
+</RelativeLayout>

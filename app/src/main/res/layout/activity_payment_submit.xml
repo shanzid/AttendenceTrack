@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.company.PaymentSubmitActivity">
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:background="@color/toolbar_color"
+        android:layout_height="60dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:tint="@color/white"
+            android:src="@drawable/ic_arrow_left_black_48dp">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/back"
+            android:padding="6dp"
+            android:text="Payment"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+
+            >
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:background="@drawable/shadow_rect_orange"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dimen10"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvAccNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="15sp"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="@dimen/dimen10"
+                    android:paddingLeft="@dimen/dimen10"
+                    android:paddingRight="@dimen/dimen10"
+                    android:text="@string/please_send_your_due_amount_to_abvove_marchant_account_number_and_fill_the_from_below_to_let_us_know"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Sender Number"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="017********"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Account Title"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/accTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Personal"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Transaction ID"
+                android:textColor="@color/black_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:boxStrokeWidth="2dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tranxID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="A2AWW"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textColor="@color/black_color"
+                    android:textColorHint="@color/hint" />
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_gravity="center"
+                android:backgroundTint="@color/toolbar_color"
+                android:layout_marginStart="@dimen/dimen10"
+                android:id="@+id/submit"
+                android:layout_width="@dimen/dimen200"
+                android:layout_height="48dp"
+                android:background="@drawable/gradiant_white"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginTop="@dimen/dp40"
+                android:text="Submit"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

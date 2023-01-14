@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/dimen10"
+    android:layout_marginTop="@dimen/dimen10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/inter_bold"
+                android:padding="5dp"
+                android:text="@string/manual_attendence"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+           <!-- <EditText
+                android:id="@+id/reason"
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen200"
+                android:background="@color/mate_white"
+                android:gravity="start"
+                android:hint="Write here"
+                android:paddingStart="@dimen/dimen10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />-->
+
+            <EditText
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_cornor_dark_bg"
+                android:backgroundTint="@color/cardbg"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/dimen12"
+                android:gravity="top"
+                android:hint="Write your attendance reason"
+                android:lines="5"
+                android:textColor="@color/cardbg"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/dimen20"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginEnd="@dimen/dimen10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/testCancel"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/dimen40"
+                android:layout_marginEnd="@dimen/dimen10"
+                android:padding="10dp"
+                android:background="@drawable/small_button_shape"
+                android:text="Cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/submit"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dimen10"
+                android:padding="10dp"
+                android:background="@drawable/small_button_shape"
+                android:text="Confirm"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

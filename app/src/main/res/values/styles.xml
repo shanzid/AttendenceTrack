@@ -1,0 +1,32 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox" parent="Base.Widget.MaterialComponents.TextInputLayout">
+        <item name="materialThemeOverlay">
+            @style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox
+        </item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+    </style>
+    <style name="SearchViewStyle2" parent="">
+        <!-- Gets rid of the search icon -->
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:editTextColor">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="searchIcon"> @drawable/ic_baseline_search_24</item>
+
+    </style>
+
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/toolbar_color</item>
+        <item name="colorControlActivated">@color/toolbar_color</item>
+    </style>
+</resources>

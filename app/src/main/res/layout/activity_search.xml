@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.company.SearchActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/toolbar_color"
+        android:padding="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:tint="@color/white"
+            android:layout_marginStart="@dimen/dimen18"
+            android:padding="@dimen/dimen10"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/dimen20"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/gradiant_white"
+            android:layout_marginEnd="@dimen/dimen20"
+            android:layout_marginBottom="10dp"
+            android:theme="@style/SearchViewStyle2"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search"
+            app:searchIcon="@drawable/ic_baseline_search_24" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearTop"
+        android:layout_marginStart="@dimen/dimen6"
+        android:layout_marginEnd="@dimen/dimen6"
+        android:layout_marginBottom="@dimen/dimen6"
+        android:padding="10dp" />
+
+
+</RelativeLayout>

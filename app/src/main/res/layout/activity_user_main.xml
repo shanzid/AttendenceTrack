@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".activity.user.UserMainActivity">
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo_trans" />
+
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/logoff" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/one">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lyt_userData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/dimen15"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="@dimen/dimen8"
+                    android:padding="4dp"
+                    android:src="@drawable/user" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/userMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:id="@+id/profile"
+                    android:layout_height="40dp"
+                    android:src="@drawable/resume" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvemployee"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_userData"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/gradiant_white"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Employee"
+                android:textColor="#FAA83A">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvCompany"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvGotoMap"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_marginEnd="5dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/loc" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Work Location">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvDateWise"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_toEndOf="@+id/cvGotoMap"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/attendance" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Date Wise \nAttendance">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvEmpAttendance"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvGotoMap"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/immigration" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img3"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Attendance">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvGoToTask"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvDateWise"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/cvEmpAttendance"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img4"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/task" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img4"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Task List">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cvProfile"-->
+<!--                    android:layout_width="165dp"-->
+<!--                    android:layout_height="171dp"-->
+<!--                    android:layout_below="@+id/cvGoToTask"-->
+<!--                    android:layout_marginTop="18dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    app:cardCornerRadius="14dp">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+
+<!--                        android:layout_gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/img6"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:background="@drawable/shadow_oval"-->
+<!--                            android:padding="18dp"-->
+<!--                            android:src="@drawable/user" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:id="@+id/tv6"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/img6"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="14dp"-->
+<!--                            android:text="Profile">-->
+
+<!--                        </androidx.appcompat.widget.AppCompatTextView>-->
+<!--                    </RelativeLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_manualAttID"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvGoToTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img7"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/calendar2" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img7"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Manual Attendance">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_support"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cvGoToTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_toEndOf="@+id/cv_manualAttID"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img8"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/technicalsupport" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img8"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Support">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_chnagepass"
+                    android:layout_width="165dp"
+                    android:layout_marginStart="@dimen/dimen5"
+                    android:layout_height="171dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/cv_manualAttID"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img22"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/password" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img22"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Change Password">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvShareApp"
+                    android:layout_width="165dp"
+                    android:layout_height="171dp"
+                    android:layout_below="@+id/cv_support"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_toEndOf="@+id/cv_manualAttID"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img10"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shadow_oval"
+                            android:padding="18dp"
+                            android:src="@drawable/ic_baseline_share_24" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img10"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:text="Share App">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

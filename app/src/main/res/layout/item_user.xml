@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="4dp"
+    android:background="@drawable/shadow_border"
+    android:layout_margin="4dp"
+    android:padding="6dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#4A89FE">
+    <LinearLayout
+        android:layout_margin="6dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/user"
+            />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_weight=".8"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="8">
+
+                <TextView
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    android:paddingStart="10dp"
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    android:textColor="#000"
+                    />
+                <TextView
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    android:paddingStart="10dp"
+                    android:id="@+id/number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    android:textColor="#000"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/phoneCall"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_local_phone_24">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

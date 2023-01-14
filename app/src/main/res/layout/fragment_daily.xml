@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginEnd="@dimen/dimen10"
+                    android:layout_marginStart="@dimen/dimen10"
+                    android:id="@+id/lytStartDate"
+                    android:background="@drawable/shadow_rect"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:orientation="horizontal"
+                    android:layout_height="@dimen/dimen50">
+                    <TextView
+                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:id="@+id/tv_start_date"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight=".9"
+                        android:text="Select a Date"
+                        android:textColor="@color/text_color"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight=".2"
+                        android:layout_height="40dp"
+                        android:src="@drawable/calendar"/>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_weight=".1"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/solid_button"
+                    android:padding="5dp"
+                    android:text="search"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reportList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:nestedScrollingEnabled="false">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

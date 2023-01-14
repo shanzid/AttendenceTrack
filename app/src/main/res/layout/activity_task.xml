@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.Task.TaskActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/toolbar_color"
+            app:title="Task List"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EDE8E8"
+                app:tabBackground="@color/mate_white"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="1dp"
+                app:tabIndicatorColor="@color/toolbar_color"
+                app:tabInlineLabel="true"
+                app:tabMode="fixed"
+                app:tabTextColor="#000" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.viewpager.widget.ViewPager>
+        <FrameLayout
+            android:id="@+id/fragmentHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

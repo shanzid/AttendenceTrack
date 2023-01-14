@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.Task.TaskDetailsActivity">
+    <RelativeLayout
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar_color"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen5"
+            android:padding="@dimen/dimen10"
+            android:src="@drawable/ic_arrow_left_black_48dp"
+            android:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headertext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/back"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/category_text_12"
+            android:layout_toEndOf="@+id/back"
+            android:text="Task Details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/category_text_18">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lin1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:id="@+id/lyt_userData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/mate_white"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TaskNo"
+                    android:layout_width="@dimen/dimen50"
+                    android:padding="@dimen/dimen15"
+                    android:layout_height="@dimen/dimen50"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_shape"
+                    android:layout_marginStart="10dp"
+                    android:text="2"
+                    android:textColor="@color/black_color"
+                    android:textSize="16sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/dimen8"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:padding="@dimen/dimen5"
+                        android:id="@+id/dateID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textColor="@color/black_color"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:padding="@dimen/dimen5"
+                        android:textStyle="bold"
+                        android:id="@+id/detailsID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:padding="@dimen/dimen5"
+                        android:id="@+id/tv_userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="@dimen/dimen5"
+                        android:text="" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_Phone"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:layout_marginStart="@dimen/dimen8"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="@dimen/dimen5"
+                            android:text="" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_Status"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:layout_marginStart="@dimen/dimen8"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="@dimen/dimen5"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight=".3"
+                            android:padding="@dimen/dimen5"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:text="Rating :"
+                            android:textSize="19sp" />
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_gravity="center"
+                            android:theme="@style/RatingBar"
+                            android:rating="0"
+                            android:stepSize="1"
+                            android:numStars="5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/solid_button"
+                android:text="Complete Task"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

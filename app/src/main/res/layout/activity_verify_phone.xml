@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trackingbg">
+
+
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="1"
+            android:fontFamily="@font/popin_regular"
+            android:text="Attendance Tracker"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignTop="@+id/header"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/header"
+            android:src="@drawable/logo">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:fontFamily="@font/popin_regular"
+            android:text=""
+            android:gravity="center"
+            android:textColor="#F26539"
+            android:textSize="18sp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <RelativeLayout
+            android:id="@+id/email_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/emailText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/login_button"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/popin_regular"
+                android:gravity="center"
+                android:hint=""
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/email_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/solid__loginbutton"
+            android:fontFamily="@font/popin_regular"
+            android:text="submit"
+            android:textColor="@color/white"
+            android:textSize="15dp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </RelativeLayout>
+
+</ScrollView>

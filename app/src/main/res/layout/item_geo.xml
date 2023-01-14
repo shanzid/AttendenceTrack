@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shadow_border"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        >
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_weight=".8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40">
+                <TextView
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="10dp"
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_weight=".9"
+                    android:layout_height="match_parent"
+                    android:text="date"
+                    android:textColor="#000"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/lytStatus"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="@dimen/dp3"
+                    android:background="@drawable/shadow_oval_green"
+                    android:layout_width="30dp"
+                    android:layout_height="@dimen/dimen30">
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="In"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:maxLines="1"
+                android:textSize="14sp"
+                android:paddingStart="10dp"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="lat long"
+                android:textColor="#000"
+                />
+            <TextView
+                android:padding="5dp"
+                android:maxLines="1"
+                android:textSize="14sp"
+                android:paddingStart="10dp"
+                android:id="@+id/lat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="lat"
+                android:textColor="#000"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

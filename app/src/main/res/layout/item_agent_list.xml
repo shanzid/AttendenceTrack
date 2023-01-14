@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardBackgroundColor="#ffff"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="4dp">
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen5"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        android:layout_marginStart="@dimen/dimen5"
+        android:text="Name:"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <LinearLayout
+
+        android:padding="@dimen/dimen5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/mobileTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:textStyle="bold"
+                android:text="mobile:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/company_countTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:paddingStart="10dp"
+                android:text="Company Count:"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/mobile2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:text="mobile2:"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/saleChargeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:text="Sale:"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

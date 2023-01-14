@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    android:background="@drawable/shadow_border"
+    tools:ignore="MissingDefaultResource">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight=".3"
+        android:id="@+id/imageView"
+        android:layout_height="100dp"
+        android:src="@drawable/user"
+        />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight=".7"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/company_nameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Company name"
+            android:textColor="@color/black_color"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/divTV"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/company_nameTV"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Dhaka"-->
+<!--            android:textColor="@color/black_color">-->
+
+<!--        </androidx.appcompat.widget.AppCompatTextView>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/company_nameTV"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="01784055773"
+            android:textColor="@color/black_color"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/company_nameTV"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="company"
+            android:textColor="@color/black_color"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginBottom="@dimen/dimen10"
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/company_nameTV"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="01784055773"
+            android:textColor="@color/black_color">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/blockUser"
+        android:layout_width="40dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:layout_gravity="top"
+        android:layout_height="40dp"
+        android:src="@drawable/block_user"
+      />
+
+
+</LinearLayout>
