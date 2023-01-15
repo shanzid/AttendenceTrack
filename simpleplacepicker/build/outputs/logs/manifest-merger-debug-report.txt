@@ -1,65 +1,65 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:2:1-26:12
 	package
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:3:5-47
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:6:5-81
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:6:5-81
 	android:name
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:6:22-78
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:7:5-79
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:7:22-76
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:9:5-24:19
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:9:5-24:19
 	android:supportsRtl
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:12:9-41
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:13:9-46
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:13:9-46
 	android:icon
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:11:9-41
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:11:9-41
 	android:allowBackup
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:15:9-40
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:15:9-40
 activity#com.attendance.simpleplacepicker.MapActivity
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:16:9-19:54
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:16:9-19:54
 	android:windowSoftInputMode
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:19:13-52
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:19:13-52
 	android:theme
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:18:13-56
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:18:13-56
 	android:name
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:17:13-72
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:17:13-72
 service#com.attendance.simpleplacepicker.utils.FetchAddressIntentService
-ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:21:9-23:40
+ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:23:13-37
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml:22:13-92
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml:22:13-92
 uses-sdk
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-		ADDED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
-		INJECTED from C:\Shanzid\Tracking\AttendenceTrack\simpleplacepicker\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidProjects\AsoftLtd\FindPlaceSample (1)\multigeofinder\simpleplacepicker\src\main\AndroidManifest.xml

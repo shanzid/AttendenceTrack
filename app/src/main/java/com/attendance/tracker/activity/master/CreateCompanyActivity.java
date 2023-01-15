@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -37,7 +39,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CreateCompanyActivity extends AppCompatActivity {
-    private TextInputEditText company,mobile,mobile_2,user_name,email,address,pass,Cpass,employee,cost;
+    private TextInputEditText company,mobile,mobile_2,user_name,email,address,pass,Cpass,employee,cost,et_referCode;
     Spinner division,district,thana,country;
     AppCompatImageView back;
     AppCompatButton save;
@@ -99,6 +101,14 @@ public class CreateCompanyActivity extends AppCompatActivity {
         back = findViewById(R.id.back);//imageview
         passwordView = findViewById(R.id.showPassword);
         getPasswordView = findViewById(R.id.showPassword2);
+        et_referCode = findViewById(R.id.et_referCode);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String refercode = prefs.getString("refer_code",null);
+        if (refercode.isEmpty()){
+
+        }else {
+            et_referCode.setText(refercode);
+        }
 
     }
     private void initFunc() {
