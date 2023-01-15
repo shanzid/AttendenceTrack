@@ -242,17 +242,7 @@ public class UserMainActivity extends AppCompatActivity {
     }
 
     private void shareApp() {
-        getLink = "https://artificial-soft.com/" + userId;
-/*        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://artificial-soft.com/"))
-                .setDomainUriPrefix("https://artisoft.page.link")
-                // Open links with this app on Android
-                .setAndroidParameters(new DynamicLink.AndroidParameters.Builder().build())
-                // Open links with com.example.ios on iOS
-                .setIosParameters(new DynamicLink.IosParameters.Builder("com.example.ios").build())
-                .buildDynamicLink();
-
-        Uri dynamicLinkUri = dynamicLink.getUri();*/
+        getLink = "https://artificial-soft.com/"+userId;
 
         Task<ShortDynamicLink> shortLinkTask = FirebaseDynamicLinks.getInstance().createDynamicLink()
                 .setDomainUriPrefix("https://artisoft.page.link/")
@@ -275,10 +265,10 @@ public class UserMainActivity extends AppCompatActivity {
                                 shareIntent.setType("text/plain");
                                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Attendance Tracking");
                                 assert shortLink != null;
-                                getLink = shortLink.toString();
+                                getLink= shortLink.toString();
                                 shareIntent.putExtra(Intent.EXTRA_TEXT, getLink);
                                 startActivity(Intent.createChooser(shareIntent, "choose one"));
-                            } catch (Exception e) {
+                            } catch(Exception e) {
                                 //e.toString();
                             }
                         } else {

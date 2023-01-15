@@ -56,10 +56,9 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String action = intent.getAction();
         Uri data = intent.getData();
-        /*if (data !=null){
-            String referUser = data.toString().substring(-2);
+        if (data !=null){
 
-        }*/
+        }
     }
 
     private void loadContent() {

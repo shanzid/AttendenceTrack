@@ -107,16 +107,6 @@ public class MainActivity extends AppCompatActivity{
 
     private void shareApp() {
         getLink = "https://artificial-soft.com/"+userId;
-/*        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://artificial-soft.com/"))
-                .setDomainUriPrefix("https://artisoft.page.link")
-                // Open links with this app on Android
-                .setAndroidParameters(new DynamicLink.AndroidParameters.Builder().build())
-                // Open links with com.example.ios on iOS
-                .setIosParameters(new DynamicLink.IosParameters.Builder("com.example.ios").build())
-                .buildDynamicLink();
-
-        Uri dynamicLinkUri = dynamicLink.getUri();*/
 
         Task<ShortDynamicLink> shortLinkTask = FirebaseDynamicLinks.getInstance().createDynamicLink()
                 .setDomainUriPrefix("https://artisoft.page.link/")
