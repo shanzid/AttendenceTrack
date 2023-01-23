@@ -3,23 +3,13 @@ package com.attendance.tracker.activity.user;
 import static android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
 import static android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_VISIBLE;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.AlarmManager;
 import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -40,6 +30,14 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.attendance.tracker.R;
 import com.attendance.tracker.data.GeoFanceReport;
@@ -92,7 +90,6 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.lang.reflect.Type;
-import java.sql.Time;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -100,14 +97,13 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MapTestUserActivity extends FragmentActivity implements OnMapReadyCallback, GeoQueryEventListener, OnDataCompleteListener {
+public class MapTestUserActivityNew extends FragmentActivity implements OnMapReadyCallback, GeoQueryEventListener, OnDataCompleteListener {
     private GoogleMap mMap;
     private ActivityMapTestUserBinding binding;
     private LocationRequest locationRequest;
@@ -116,16 +112,16 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     private Marker currentUserPosition;
     private DatabaseReference databaseReference;
     private GeoFire geoFire;
-    public static List<LatLng> areaList;
+    public static List<LatLng> areaList ;
     AppSessionManager appSessionManager;
-    public static String userID = "";
-    public static String userName = "";
+    public static  String userID = "";
+    public static  String userName = "";
 
     private OnDataCompleteListener onDataCompleteListener;
     String path = "AttendanceTracker";
-    private DatabaseReference myArea;
+    private  DatabaseReference myArea;
     public Location lastLocation;
-    private GeoQuery geoQuery;
+    private GeoQuery geoQuery ;
     ArrayList<GeoFanceReportList> geoReportLists = new ArrayList<>();
     CheckInternetConnection internetConnection;
     List<LatLng> areList = new ArrayList<>();
@@ -138,7 +134,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     Intent mServiceIntent;
     BroadcastReceiver br = new MyBroadcastReceiver();
 
-    MyBroadcastReceiver myReceiver = null;
+    MyBroadcastReceiver myReceiver=null;
     Intent i;
 
     Date currentTime;
@@ -167,7 +163,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
                         buildLocationRequest();
                         buildLocationCallback();
-                        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapTestUserActivity.this);
+                        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapTestUserActivityNew.this);
 
                         settingGeoFire();
                         getGeoLocation(userID);
@@ -176,7 +172,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
-                        Toast.makeText(MapTestUserActivity.this, "You Must Enable Permission", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MapTestUserActivityNew.this, "You Must Enable Permission", Toast.LENGTH_SHORT).show();
                     }
                 }).check();
     }
@@ -195,24 +191,27 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onClick(View v) {
                 //finish();
-                Intent intent = new Intent(MapTestUserActivity.this, UserMainActivity.class);
+                Intent intent = new Intent(MapTestUserActivityNew.this, UserMainActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
-        try {
+        try
+        {
 
             @SuppressLint("SimpleDateFormat")
             SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss aa");
             Date date1 = format.parse("08:00:12 pm");
             Date date2 = format.parse("05:30:12 pm");
             long mills = date1.getTime() - date2.getTime();
-            Log.v("Data1", "" + date1.getTime());
-            Log.v("Data2", "" + date2.getTime());
-            int hours = (int) (mills / (1000 * 60 * 60));
-            int mins = (int) (mills / (1000 * 60)) % 60;
+            Log.v("Data1", ""+date1.getTime());
+            Log.v("Data2", ""+date2.getTime());
+            int hours = (int) (mills/(1000 * 60 * 60));
+            int mins = (int) (mills/(1000*60)) % 60;
             String diff = hours + ":" + mins; // updated value every1 second
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
@@ -225,20 +224,20 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     }
 
     private void initArea() {
-        if (areList != null) {
+        if (areList != null){
             FirebaseDatabase.getInstance()
                     .getReference(path)
                     .child(userID)
                     .setValue(areList).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Log.w("employer Enter", "Done");
+                            Log.w("employer Enter","Done");
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
 
-                            Toast.makeText(MapTestUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MapTestUserActivityNew.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                         }
                     });
@@ -263,7 +262,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     });
         }*/
 
-        myArea = FirebaseDatabase.getInstance()
+        myArea =  FirebaseDatabase.getInstance()
                 .getReference(path)
                 .child(userID);
 
@@ -273,7 +272,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                 // update area list
                 List<MyLatLong> latLngList = new ArrayList<>();
 
-                for (DataSnapshot locationSnapShot : snapshot.getChildren()) {
+                for (DataSnapshot locationSnapShot : snapshot.getChildren()){
                     MyLatLong latLng = locationSnapShot.getValue(MyLatLong.class);
                     latLngList.add(latLng);
                 }
@@ -287,7 +286,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         });
     }
 
-    public void setUserOwnLiveLocation(String latitude, String longititude) {
+    public void setUserOwnLiveLocation(String latitude,String longititude){
         Date currentTime = Calendar.getInstance().getTime();
         userTrac.setDate(String.valueOf(currentTime));
         userTrac.setLatitute(latitude);
@@ -299,30 +298,29 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                 .setValue(userTrac).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Log.w("employer Enter", "Done");
+                        Log.w("employer Enter","Done");
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText(MapTestUserActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MapTestUserActivityNew.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
 
     }
-
-    public void submitAttended(Context mContext, String userId, String id, String timestamp, String latlong, String type) {
+    public void submitAttended(Context mContext, String userId, String id, String timestamp, String latlong,String type){
         if (internetConnection.isInternetAvailable(mContext)) {
             APIService mApiService = ApiUtils.getApiService(ConstantValue.URL);
-            mApiService.submitAttend(userId, id, timestamp, latlong, type, userId + "_" + id).enqueue(new Callback<GeoSubmitResponse>() {
+            mApiService.submitAttend(userId,id,timestamp,latlong,type,userId+"_"+id).enqueue(new Callback<GeoSubmitResponse>() {
                 @Override
                 public void onResponse(Call<GeoSubmitResponse> call, Response<GeoSubmitResponse> response) {
                     if (response.isSuccessful()) {
                         if (response.body().getError() == 0) {
-                            Toast.makeText(mContext, "" + response.body().getErrorReport(), Toast.LENGTH_SHORT).show();
+                               Toast.makeText(mContext, ""+response.body().getErrorReport(), Toast.LENGTH_SHORT).show();
 
-                            Log.w("test", "" + response.body().getErrorReport());
+                            Log.w("test",""+response.body().getErrorReport());
                         } else if (response.body().getError() == 1) {
                             Toast.makeText(getApplicationContext(), "data not found.", Toast.LENGTH_SHORT).show();
                         }
@@ -365,7 +363,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     }
 
     private void addUserMarker() {
-        setUserOwnLiveLocation(String.valueOf(lastLocation.getLatitude()), String.valueOf(lastLocation.getLongitude()));
+        setUserOwnLiveLocation(String.valueOf(lastLocation.getLatitude()),String.valueOf(lastLocation.getLongitude()));
         geoFire.setLocation(userID, new GeoLocation(lastLocation.getLatitude(),
                 lastLocation.getLongitude()), new GeoFire.CompletionListener() {
             @Override
@@ -381,7 +379,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
     }
 
-    private void buildLocationCallback() {
+    private void buildLocationCallback(){
 
         locationCallback = new LocationCallback() {
             @Override
@@ -398,35 +396,35 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     }
 
     private void addUserGeoCircle() {
-        if (geoQuery != null) {
+        if(geoQuery != null){
             geoQuery.removeGeoQueryEventListener(this);
 
             geoQuery.removeAllListeners();
         }
 
         //for (LatLng area : areaList){
-        for (int i = 0; i <= geoReportLists.size() - 1; i++) {
-            String currentString = geoReportLists.get(i).getGeo();
-            String[] separated = currentString.split(",");
-            String lat = separated[0];
-            String lng = separated[1];
-            LatLng latlon = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
-            mMap.addCircle(new CircleOptions()
-                    .center(latlon)
-                    .radius(geoReportLists.get(i).getRadius())
-                    .strokeColor(Color.BLUE)
-                    .fillColor(0x220000FF)
-                    .strokeWidth(5));
+            for (int i=0;i<=geoReportLists.size()-1; i++){
+                String currentString = geoReportLists.get(i).getGeo();
+                String[] separated = currentString.split(",");
+                String lat = separated[0];
+                String lng = separated[1];
+                LatLng latlon = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
+                mMap.addCircle(new CircleOptions()
+                        .center(latlon)
+                        .radius(geoReportLists.get(i).getRadius())
+                        .strokeColor(Color.BLUE)
+                        .fillColor(0x220000FF)
+                        .strokeWidth(5));
 
-            // create geo
-            geoQuery = geoFire.queryAtLocation(new GeoLocation(Double.parseDouble(lat), Double.parseDouble(lng)), 0.2f);
-            geoQuery.addGeoQueryEventListener(MapTestUserActivity.this);
-        }
-        // }
+                // create geo
+                geoQuery = geoFire.queryAtLocation(new GeoLocation(Double.parseDouble(lat),Double.parseDouble(lng)), 0.2f);
+                geoQuery.addGeoQueryEventListener(MapTestUserActivityNew.this);
+            }
+       // }
         starServiceFunc();
     }
 
-    private void buildLocationRequest() {
+    private void buildLocationRequest(){
         locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(5000);
@@ -503,7 +501,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                 if (e instanceof ResolvableApiException) {
                     ResolvableApiException resolvable = (ResolvableApiException) e;
                     try {
-                        resolvable.startResolutionForResult(MapTestUserActivity.this, 51);
+                        resolvable.startResolutionForResult(MapTestUserActivityNew.this, 51);
                     } catch (IntentSender.SendIntentException e1) {
                         e1.printStackTrace();
                     }
@@ -527,7 +525,8 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                                 userExitLat = String.valueOf(mLAstKnownLocation.getLatitude());
                                 userExitLng = String.valueOf(mLAstKnownLocation.getLongitude());
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLAstKnownLocation.getLatitude(), mLAstKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                            } else {
+                            }
+                            else {
                                 final LocationRequest locationRequest = LocationRequest.create();
                                 locationRequest.setInterval(1000);
                                 locationRequest.setFastestInterval(5000);
@@ -550,12 +549,11 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                                 fusedLocationProviderClient.requestLocationUpdates(locationRequest, null);
                             }
                         } else {
-                            Toast.makeText(MapTestUserActivity.this, "Unable to get last location ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MapTestUserActivityNew.this, "Unable to get last location ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
-
     @Override
     protected void onStop() {
         fusedLocationProviderClient.removeLocationUpdates(locationCallback);
@@ -564,7 +562,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
     @Override
     public void onKeyEntered(String key, GeoLocation location) {
-/*        currentTime = Calendar.getInstance().getTime();
+        currentTime = Calendar.getInstance().getTime();
         if (oldTime == null){
             oldTime = currentTime;
             long tsLong = System.currentTimeMillis() / 1000;
@@ -615,30 +613,30 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
                 }
             }
-        }*/
+        }
     }
 
     @Override
     public void onKeyExited(String key) {
 
-/*        currentTimeExit = Calendar.getInstance().getTime();
-        if (oldTimeExit == null) {
+        currentTimeExit = Calendar.getInstance().getTime();
+        if (oldTimeExit == null){
             oldTimeExit = currentTimeExit;
             long tsLong = System.currentTimeMillis() / 1000;
             String timeStamps = Long.toString(tsLong);
 
-            submitAttended(getApplicationContext(), userID, key, timeStamps, currentlocation.getLatitude() + "," + currentlocation.getLongitude(), "1");
+            submitAttended(getApplicationContext(),userID,key,timeStamps,currentlocation.getLatitude() +","+currentlocation.getLongitude(), "1");
 
-        } else {
-            long diff = currentTimeExit.getTime() - oldTimeExit.getTime();
+        }else {
+            long diff  = currentTimeExit.getTime() - oldTimeExit.getTime();
             long seconds = diff / 1000;
             long minutes = seconds / 60;
-            if (minutes >= 5) {
+            if (minutes>=5){
                 long tsLong = System.currentTimeMillis() / 1000;
                 String timeStamps = Long.toString(tsLong);
-                submitAttended(getApplicationContext(), userID, key, timeStamps, currentlocation.getLatitude() + "," + currentlocation.getLongitude(), "1");
+                submitAttended(getApplicationContext(),userID,key,timeStamps,currentlocation.getLatitude() +","+currentlocation.getLongitude(), "1");
             }
-        }*/
+        }
     }
 
     @Override
@@ -652,7 +650,6 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         //  sendNotification("Onready","Onready");
 
     }
-
     @Override
     public void onGeoQueryError(DatabaseError error) {
         //sendNotification("Employer erorr","erorr");
@@ -663,9 +660,9 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
 
         String channel_id = "userLocation";
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
             NotificationChannel notificationChannel = new NotificationChannel(channel_id, channel_id, NotificationManager.IMPORTANCE_HIGH);
             notificationChannel.enableLights(true);
             notificationChannel.enableVibration(true);
@@ -676,7 +673,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             manager.createNotificationChannel(notificationChannel);
         }
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channel_id);
+        NotificationCompat.Builder builder = new   NotificationCompat.Builder(this,channel_id);
         builder.setContentTitle(title);
         builder.setContentText(details);
         builder.setAutoCancel(false);
@@ -684,7 +681,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
         Notification notification = builder.build();
 
-        notificationManager.notify(new Random().nextInt(), notification);
+        notificationManager.notify(new Random().nextInt(),notification);
 
 
     }
@@ -694,8 +691,8 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         areaList = new ArrayList<>();
 
 
-        for (MyLatLong finalLatLong : area) {
-            LatLng convert = new LatLng(finalLatLong.getLatitude(), finalLatLong.getLongitude());
+        for (MyLatLong finalLatLong : area){
+            LatLng convert = new LatLng(finalLatLong.getLatitude(),finalLatLong.getLongitude());
             areaList.add(convert);
         }
 
@@ -704,12 +701,12 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                 .findFragmentById(R.id.map);
 
         if (mapFragment != null) {
-            mapFragment.getMapAsync(MapTestUserActivity.this);
+            mapFragment.getMapAsync(MapTestUserActivityNew.this);
         }
 
 
         // clear map and add again
-        if (mMap != null) {
+        if (mMap != null){
             mMap.clear();
             // add user Marker
             addUserMarker();
@@ -721,12 +718,12 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
     @Override
     public void LoadLocationFail(String message) {
-        Toast.makeText(this, "" + message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
     }
 
-    public void getGeoLocation(String userId) {
+    public void getGeoLocation(String userId){
         geoReportLists.clear();
-        if (internetConnection.isInternetAvailable(MapTestUserActivity.this)) {
+        if (internetConnection.isInternetAvailable(MapTestUserActivityNew.this)) {
             APIService mApiService = ApiUtils.getApiService(ConstantValue.URL);
             mApiService.getAllGeo(userId).enqueue(new Callback<GeoFanceReport>() {
                 @Override
@@ -735,25 +732,25 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                         if (response.body().getError() == 0) {
                             geoReportLists.addAll(response.body().getReport());
 
-                            for (int i = 0; i < geoReportLists.size(); i++) {
+                            for (int i = 0; i< geoReportLists.size();i++){
 
                                 String currentString = geoReportLists.get(i).getGeo();
                                 String[] separated = currentString.split(",");
                                 String lat = separated[0];
                                 String lng = separated[1];
 
-                                Log.d("split", "lat" + lat + "lng" + lng);
+                                Log.d("split","lat"+lat+"lng"+lng);
                                 areList.addAll(Collections.singleton(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng))));
 
                             }
 
-                            saveArrayList(geoReportLists, "UserList");
+                            saveArrayList(geoReportLists,"UserList");
                             initArea();
                             // dialog.dismiss();
 
                         } else if (response.body().getError() == 1) {
                             //  dialog.dismiss();
-                            Toast.makeText(MapTestUserActivity.this, "Wrong login information.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MapTestUserActivityNew.this, "Wrong login information.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -769,14 +766,13 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         }
     }
 
-    public void saveArrayList(ArrayList<GeoFanceReportList> list, String key) {
+    public void saveArrayList(ArrayList<GeoFanceReportList> list, String key){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(list);
         editor.putString(key, json);
         editor.apply();
-
     }
 
     @Override
@@ -794,7 +790,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         //if (myReceiver != null)unregisterReceiver(myReceiver);
     }
 
-    private void starServiceFunc() {
+    private void starServiceFunc(){
         appSessionManager.isServiceOn(true);
         mLocationService = new LocationService();
         mServiceIntent = new Intent(this, mLocationService.getClass());
@@ -807,13 +803,12 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         }
     }
 
-    public void stopServiceFunc() {
-        LocationService mLocationService = new LocationService();
-        Intent mServiceIntent;
-        mServiceIntent = new Intent(this, mLocationService.getClass());
+    public void  stopServiceFunc(){
+        LocationService  mLocationService = new LocationService();
+        Intent mServiceIntent;   mServiceIntent = new Intent(this, mLocationService.getClass());
         if (Util.isMyServiceRunning(mLocationService.getClass(), this)) {
             stopService(mServiceIntent);
-            //  Toast.makeText(this, "Service stopped!!", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Service stopped!!", Toast.LENGTH_SHORT).show();
             //saveLocation(); // explore it by your self
         } else {
             Toast.makeText(this, "Service is already stopped!!", Toast.LENGTH_SHORT).show();
@@ -835,9 +830,9 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
     }
 
     @SuppressLint("InvalidWakeLockTag")
-    public void startAlert() {
+    public void startAlert(){
 
-        PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        PowerManager powerManager = (PowerManager)getSystemService(Context.POWER_SERVICE);
         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK,
                 "MyWakeLock");
         try {
@@ -847,25 +842,24 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             KeyguardManager.KeyguardLock manager = keyguard_manager.newKeyguardLock("MyKeyguardLock");
             manager.disableKeyguard();
 
-        } catch (Exception e) {
+        }catch (Exception e){
             wakeLock.release();
-        } finally {
+        }finally {
             wakeLock.release();
         }
     }
 
-    public static class MyBroadcastReceiver extends BroadcastReceiver {
+    public static class MyBroadcastReceiver extends BroadcastReceiver{
         static final String Log_Tag = "MyReceiver";
-        private GeoQuery geoQuery;
+        private GeoQuery geoQuery ;
 
         @Override
-        public void onReceive(Context arg0, Intent arg1) {
+        public void onReceive(Context arg0, Intent arg1){
             Location location = arg1.getParcelableExtra("locationData");
-            setUserOwnLiveLocation(arg0, String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()));
-
+            System.out.println("I am here");
+            setUserOwnLiveLocation(arg0,String.valueOf(location.getLatitude()),String.valueOf(location.getLongitude()));
         }
-
-        public void setUserOwnLiveLocation(Context mContext, String latitude, String longititude) {
+        public void setUserOwnLiveLocation(Context mContext,String latitude,String longititude){
             UserTrac userTrac = new UserTrac();
             Date currentTime = Calendar.getInstance().getTime();
             userTrac.setDate(String.valueOf(currentTime));
@@ -879,7 +873,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     .setValue(userTrac).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Log.w("employer Enter", "Done");
+                            Log.w("employer Enter","Done");
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -891,8 +885,8 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     });
         }
 
-        public class UserTrac {
-            String latitute, logititude, date, userName;
+        public class UserTrac{
+            String latitute,logititude,date,userName;
 
             public UserTrac() {
             }
@@ -952,10 +946,6 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
         Location currentlocation;
 
-        String lastGeoId = "0";
-        String lastOut = "0";
-        Boolean isExitEnter= false;
-
         private void startLocationUpdates() {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -981,25 +971,25 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
             databaseReference = FirebaseDatabase.getInstance().getReference("myLocation");
             geoFire = new GeoFire(databaseReference);
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) createNotificationChanel();
-            else startForeground(
-                    1,
-                    new Notification()
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) createNotificationChanel() ;
+           else startForeground(
+                   1,
+                   new Notification()
             );
             locationRequest = LocationRequest.create();
-            locationRequest.setInterval(20000);
-            locationRequest.setFastestInterval(20000);
-            locationRequest.setMaxWaitTime(10000);
+            locationRequest.setInterval(8000);
+            locationRequest.setFastestInterval(8000);
+            locationRequest.setMaxWaitTime(5000);
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
             isFirstTimeVisit = false;
-            if (geoQuery != null) {
+            if (geoQuery!=null){
                 geoQuery.removeAllListeners();
             }
 
-            if (areaList != null) {
-                for (LatLng area : areaList) {
-                    geoQuery = geoFire.queryAtLocation(new GeoLocation(area.latitude, area.longitude), 0.2f);
+            if (areaList !=null){
+                for (LatLng area : areaList){
+                    geoQuery = geoFire.queryAtLocation(new GeoLocation(area.latitude,area.longitude), 0.2f);
                     geoQuery.addGeoQueryEventListener(this);
                 }
             }
@@ -1007,49 +997,14 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             locationCallback = new LocationCallback() {
                 @Override
                 public void onLocationResult(@NonNull LocationResult locationResult) {
-                    Location location = locationResult.getLastLocation();
+                    Location location =  locationResult.getLastLocation();
                     intent.putExtra("locationData", location);
                     currentlocation = location;
                     sendBroadcast(intent);
-                    //  Toast.makeText(getApplicationContext(), ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
-                    geo = location.getLatitude() + "," + location.getLongitude();
-                    currentTime = Calendar.getInstance().getTime();
-                    geoReportLists =  getArrayList("UserList");
-                    for (int i = 0; i < geoReportLists.size(); i++) {
-                        String currentString = geoReportLists.get(i).getGeo();
-                        String[] separated = currentString.split(",");
-                        String lat = separated[0];
-                        String lng = separated[1];
-                        LatLng latlon = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
-                        double distance = CalculationByDistance(new LatLng(location.getLatitude(),location.getLongitude()), latlon);
-                        if (distance > .20) {
-                            // do nothing
-                            long tsLong = System.currentTimeMillis() / 1000;
-                            String timeStamps = Long.toString(tsLong);
-                            if (!Objects.equals(lastGeoId, "0")){
-                                if (lastGeoId.equals(geoReportLists.get(i).getId())){
-                                    lastOut =  geoReportLists.get(i).getId();
-                                    if (isExitEnter){
-                                        submitAttended(getApplicationContext(), userID,geoReportLists.get(i).getId(), timeStamps, currentlocation.getLatitude() +","+currentlocation.getLongitude(), "1");
-                                    }
-                                }
-                            }
-                        } else {
-                            long tsLong = System.currentTimeMillis() / 1000;
-                            String timeStamps = Long.toString(tsLong);
-                            if (!lastGeoId.equals(geoReportLists.get(i).getId())){
-                                lastGeoId =  geoReportLists.get(i).getId();
-                                if (!lastGeoId.equals(lastOut)){
-                                    isExitEnter = true;
-                                }else {
-                                    isExitEnter = false;
-                                }
-                                submitAttended(getApplicationContext(), userID, geoReportLists.get(i).getId(), timeStamps, currentlocation.getLatitude() + "," + currentlocation.getLongitude(), "0");
-                            }
-                        }
-                    }
+                  //  Toast.makeText(getApplicationContext(), ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
+                    geo = location.getLatitude()+","+location.getLongitude();
 
-                    /*if (!isBackGround()){
+                    if (!isBackGround()){
                         geoReportLists =  getArrayList("UserList");
                         if (geoReportLists !=null){
                             for(int i= 0; i<geoReportLists.size();i++){
@@ -1062,7 +1017,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                                 });
                             }
                         }
-                    }*/
+                    }
                 }
             };
             startLocationUpdates();
@@ -1117,9 +1072,9 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
         private void sendNotification(String title, String details) {
 
             String channel_id = "userLocation";
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
                 NotificationChannel notificationChannel = new NotificationChannel(channel_id, channel_id, NotificationManager.IMPORTANCE_HIGH);
                 notificationChannel.enableLights(true);
                 notificationChannel.enableVibration(true);
@@ -1130,7 +1085,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                 manager.createNotificationChannel(notificationChannel);
             }
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channel_id);
+            NotificationCompat.Builder builder = new   NotificationCompat.Builder(this,channel_id);
             builder.setContentTitle(title);
             builder.setContentText(details);
             builder.setAutoCancel(false);
@@ -1138,12 +1093,12 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
             Notification notification = builder.build();
 
-            notificationManager.notify(new Random().nextInt(), notification);
+            notificationManager.notify(new Random().nextInt(),notification);
 
         }
 
-        private boolean isBackGround() {
-            ActivityManager.RunningAppProcessInfo procces = new ActivityManager.RunningAppProcessInfo();
+        private boolean isBackGround(){
+            ActivityManager.RunningAppProcessInfo procces  =  new ActivityManager.RunningAppProcessInfo();
             ActivityManager.getMyMemoryState(procces);
             return (procces.importance == IMPORTANCE_FOREGROUND
                     || procces.importance == IMPORTANCE_VISIBLE);
@@ -1151,7 +1106,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
         @Override
         public void onKeyEntered(String key, GeoLocation location) {
-/*            currentTime = Calendar.getInstance().getTime();
+            currentTime = Calendar.getInstance().getTime();
             if(!isBackGround()){
                 if (oldTime == null){
                     oldTime = currentTime;
@@ -1194,12 +1149,12 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                         }
                     }
                 }
-            }*/
+            }
         }
 
         @Override
         public void onKeyExited(String key) {
-/*            currentTimeExit = Calendar.getInstance().getTime();
+            currentTimeExit = Calendar.getInstance().getTime();
             if(!isBackGround()) {
                 if (oldTimeExit == null) {
                     oldTimeExit = currentTimeExit;
@@ -1217,7 +1172,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                         submitAttended(getApplicationContext(), userID,key, timeStamps, currentlocation.getLatitude() +","+currentlocation.getLongitude(), "1");
                     }
                 }
-            }*/
+            }
         }
 
         @Override
@@ -1235,17 +1190,17 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
         }
 
-        public void submitAttended(Context mContext, String userId, String id, String timestamp, String latlong, String type) {
+        public void submitAttended(Context mContext, String userId,String id, String timestamp, String latlong,String type){
             if (internetConnection.isInternetAvailable(mContext)) {
                 APIService mApiService = ApiUtils.getApiService(ConstantValue.URL);
-                mApiService.submitAttend(userId, id, timestamp, latlong, type, userId + "_" + id).enqueue(new Callback<GeoSubmitResponse>() {
+                mApiService.submitAttend(userId,id,timestamp,latlong,type,userId+"_"+id).enqueue(new Callback<GeoSubmitResponse>() {
                     @Override
                     public void onResponse(Call<GeoSubmitResponse> call, Response<GeoSubmitResponse> response) {
                         if (response.isSuccessful()) {
                             if (response.body().getError() == 0) {
-                                Toast.makeText(mContext, "" + response.body().getErrorReport(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, ""+response.body().getErrorReport(), Toast.LENGTH_SHORT).show();
 
-                                Log.w("test", "" + response.body().getErrorReport());
+                                Log.w("test",""+response.body().getErrorReport());
                             } else if (response.body().getError() == 1) {
                                 Toast.makeText(getApplicationContext(), response.body().getErrorReport(), Toast.LENGTH_SHORT).show();
                             }
@@ -1262,12 +1217,11 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
             }
         }
 
-        public ArrayList<GeoFanceReportList> getArrayList(String key) {
+        public ArrayList<GeoFanceReportList> getArrayList(String key){
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
             Gson gson = new Gson();
             String json = prefs.getString(key, null);
-            Type type = new TypeToken<ArrayList<GeoFanceReportList>>() {
-            }.getType();
+            Type type = new TypeToken<ArrayList<GeoFanceReportList>>() {}.getType();
             return gson.fromJson(json, type);
         }
 
@@ -1298,8 +1252,8 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
 
     }
 
-    public class UserTrac {
-        String latitute, logititude, date, userName;
+    public class UserTrac{
+        String latitute,logititude,date,userName;
 
         public UserTrac() {
         }
