@@ -1012,6 +1012,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     currentlocation = location;
                     sendBroadcast(intent);
                     //  Toast.makeText(getApplicationContext(), ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
+                    assert location != null;
                     geo = location.getLatitude() + "," + location.getLongitude();
                     currentTime = Calendar.getInstance().getTime();
                     geoReportLists =  getArrayList("UserList");
@@ -1030,6 +1031,7 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                                 if (lastGeoId.equals(geoReportLists.get(i).getId())){
                                     lastOut =  geoReportLists.get(i).getId();
                                     if (isExitEnter){
+                                        isExitEnter = false;
                                         submitAttended(getApplicationContext(), userID,geoReportLists.get(i).getId(), timeStamps, currentlocation.getLatitude() +","+currentlocation.getLongitude(), "1");
                                     }
                                 }
