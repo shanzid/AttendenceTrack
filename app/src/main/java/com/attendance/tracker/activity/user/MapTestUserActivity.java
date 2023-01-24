@@ -1012,6 +1012,9 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                     currentlocation = location;
                     sendBroadcast(intent);
                     //  Toast.makeText(getApplicationContext(), ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
+
+
+                    // this is sign in out section dot try to edit it
                     assert location != null;
                     geo = location.getLatitude() + "," + location.getLongitude();
                     currentTime = Calendar.getInstance().getTime();
@@ -1051,20 +1054,6 @@ public class MapTestUserActivity extends FragmentActivity implements OnMapReadyC
                         }
                     }
 
-                    /*if (!isBackGround()){
-                        geoReportLists =  getArrayList("UserList");
-                        if (geoReportLists !=null){
-                            for(int i= 0; i<geoReportLists.size();i++){
-                                geoFire.setLocation(geoReportLists.get(i).getId(), new GeoLocation(location.getLatitude(), location.getLongitude()), new GeoFire.CompletionListener() {
-                                    @Override
-                                    public void onComplete(String key, DatabaseError error) {
-
-                                        Log.d("","");
-                                    }
-                                });
-                            }
-                        }
-                    }*/
                 }
             };
             startLocationUpdates();
